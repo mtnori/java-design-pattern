@@ -4,19 +4,21 @@ import factorymethod.framework.*;
 import java.util.*;
 
 public class IDCardFactory extends Factory {
-    private List<String> owners = new ArrayList<>();
+    private HashMap database = new HashMap();
+    private int serial = 100;
 
     @Override
-    protected Product createProduct(String owner) {
-        return new IDCard(owner);
+    protected synchronized Product createProduct(String owner) {
+        return new IDCard(owner, serial++);
     }
 
     @Override
     protected void registerProduct(Product product) {
-        owners.add(((IDCard)product).getOwner());
+        IDCard card = (IDCard) product;
+        database.put(new Integer(card.getSerial()), card.getOwner());
     }
 
-    public List<String> getOwners() {
-        return owners;
+    public HashMap getDatabase() {
+        return database;
     }
 }
