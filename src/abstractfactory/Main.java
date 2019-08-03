@@ -16,7 +16,7 @@ public class Main {
         Link yomiuri = factory.createLink("読売新聞", "http://www.yomiuri.co.jp/");
         Link us_yahoo = factory.createLink("Yahoo!", "http://www.yahoo.com");
         Link jp_yahoo = factory.createLink("Yahoo!Japan", "http://www.yahoo.co.jp");
-        Link excite = factory.createLink("Excite", "http:/www.excite.com/");
+        Link excite = factory.createLink("Excite", "http://www.excite.com/");
         Link google = factory.createLink("Google", "http://google.com/");
 
         Tray traynews = factory.createTray("新聞");
